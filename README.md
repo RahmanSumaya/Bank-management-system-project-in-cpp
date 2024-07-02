@@ -1,6 +1,8 @@
 The application "Control My Cash" is a Bank Management System designed for two categories of users: Employees and Customers.
 
 
+
+
 Customer Features:
 
 Create Account: Customers can create new accounts with their personal information.
