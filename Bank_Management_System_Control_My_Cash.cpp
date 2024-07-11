@@ -35,8 +35,11 @@ public:
 
         }
         else
-        {
-            system("cls");
+            which_user();
+        return;
+    }
+    void which_user(){
+         system("cls");
             cout<<endl<<endl<<endl<<endl<<endl;
             cout<<"\t\t\t\t\tYou are?\n\t\t\t\t\t1. Already have an account \n\t\t\t\t\t2. New User"<<endl;
             cout<<"\t\t\t\t\tEnter Your Choice : ";
@@ -51,11 +54,8 @@ public:
                 loading();
                 new_user();
             }
-        }
-        update();
         return;
     }
-
     void loading()
     {
         system("cls");
@@ -86,6 +86,14 @@ public:
         cout<<"\t\t\t\t\tPhone Number                            :";
         cin>>Phone;
         cin.ignore();
+        int src_phno=access(Phone);
+        if(src_phno == 0)
+        {
+            cout << "\t\t\t\t\tThis number is already registered." << endl;
+            continue_button();
+            which_user();
+            return;
+        }
         cout<<"\t\t\t\t\tPassword (Password can't include space!):";
         getline(cin,password);
         cout<<"\t\t\t\t\tName                                    :";
@@ -110,11 +118,13 @@ public:
     void employee_login()
     {
         //system("cls");
+        cout<<"\t\t\t\t\t\tLOGIN PAGE"<<endl;
         string id, pass;
         cout<<endl<<endl<<endl<<endl<<endl;
 there:
         cout << "\t\t\t\t\tEnter your ID       : ";
         cin >> id;
+        if(id=="C233477" || id=="C233479" || id=="C233510" ){
         cout << "\t\t\t\t\tEnter your password :";
         cin>> pass;
         if((id=="C233477" && pass == "yasup")||(id=="C233479" && pass == "xyz")||(id=="C233510" && pass == "EEEmate"))
@@ -127,6 +137,10 @@ there:
         {
             cout<<endl<<endl;
             cout << "\t\t\t\t\tYour password is incorrect" << endl;
+            goto there;
+        }}
+        else {
+            cout<<"\n\n\t\t\t\t\tThis ID is not registered as our Employee!\n\n"<<endl;
             goto there;
         }
     }
