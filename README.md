@@ -44,7 +44,7 @@ All data inserted and changes made are stored in a file named `user`. This ensur
 The account balance will never be allowed to fall below `20`. If a user attempts to reduce the balance below this amount, the action will be stopped, and a warning will be given.
 
 ## Support
-If our project seemed helpful please give us a star 🌟  It will help our project to reach more people
+If you found our project helpful, we would greatly appreciate it if you could give us a star🌟It will help our project to reach more people
 ## Contributing
 
 Contributions are always welcome!
